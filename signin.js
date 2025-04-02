@@ -1,33 +1,37 @@
-document.getElementById('signin-form').addEventListener('submit', function (event) {
-  event.preventDefault();
-
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
-  var userType = document.getElementById('user-type').value;
-
-
-  fetch('http://localhost:3000/users?userType=' + userType)
-    .then(function (response) {
+document.getElementById('signin-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+  
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var userType = document.getElementById('usertype').value;
+  
+    var data = {
+      username: username,
+      password: password,
+      userType: userType
+    };
+  
+    fetch('http://localhost:3000/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(function(response) {
       if (response.ok) {
-        return response.json();
+        if (userType === 'doctor') {
+          window.location.href = 'doctor_dashboard.html';
+        } else if (userType === 'patient') {
+          window.location.href = 'patient_dashboard.html';
+        }
       } else {
-        throw new Error('Error fetching user data.');
+        alert('Invalid username or password. Please try again.');
       }
     })
-    .then(function (data) {
-      var user = data.find(function (item) {
-        return item.email === email && item.password === password;
-      });
-
-      if (user) {
-        
-        window.location.href = 'Appointment.html';
-      } else {
-
-        document.getElementById('error-message').textContent = 'Invalid email or password.';
-      }
-    })
-    .catch(function (error) {
-      console.error('Error:', error);
-    });
-});
+    .catch(function(error) {
+      console.log(error);
+      alert('An error occurred. Please try again later.');
+    });
+  });
+  

@@ -1,41 +1,41 @@
 body {
-    /* background-color: #135bf6; */
+    background-color: #135bf6;
     font-family: "Roboto", sans-serif;
   }
   
   .container {
     background-image: url(./images/doc2.jpg);
-    /* background-position: right; */
+    background-position: right;
     background-repeat: no-repeat;
     position: absolute;
-    top: 20%;
-    left: 40%;
-    width: 70%;
+    top: 200px;
+    left: 550px;
+    width: 750px;
     margin: 0 auto;
-    padding: 4%;
+    padding: 40px;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
   }
   
   .home-box {
     background-image: url(./images/doc1.jpg);
-    /* background-position: right; */
+    background-position: right;
     background-repeat: no-repeat;
     text-align: center;
-    width: 40%;
-    height: 30%;
+    width: 550px;
+    height: 350px;
     margin: auto;
-    padding: 2%;
+    padding: 20px;
     background-color: white;
-    border-radius: 0.3%;
+    border-radius: 3px;
     position: absolute;
-    top: 20%;
-    left: 40%;
+    top: 200px;
+    left: 550px;
   }
   
   button {
     width: 30%;
-    padding: 0.8%;
+    padding: 8px;
     background-color: #4caf50;
     color: #fff;
     border: none;
@@ -52,15 +52,15 @@ body {
   input[type="password"],
   select {
     width: 30%;
-    margin-bottom: 0.1%;
-    margin-right: 20%;
-    padding: 0.8%;
+    margin-bottom: 10px;
+    margin-right: 200px;
+    padding: 8px;
   }
   
   button[type="submit"] {
-    margin-right: 20%;
+    margin-right: 200px;
     width: 30%;
-    padding: 0.8%;
+    padding: 8px;
     background-color: #4caf50;
     color: #fff;
     border: none;
@@ -89,54 +89,3 @@ background: linear-gradient(90deg, rgba(41,81,172,0.7092086834733893) 32%, rgba(
     background-repeat: no-repeat;
   }
   
-  /* Responsive Styles */
-
-@media screen and (max-width: 768px) {
-  .container {
-    top: 10%;
-    left: 5%;
-    width: 90%;
-  }
-
-  .home-box {
-    width: 80%;
-    left: 10%;
-  }
-
-  input[type="text"],
-  input[type="password"],
-  select {
-    width: 80%;
-    margin-right: 0;
-  }
-
-  button[type="submit"] {
-    width: 80%;
-    margin-right: 0;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .container {
-    top: 5%;
-    left: 5%;
-    width: 90%;
-  }
-
-  .home-box {
-    width: 80%;
-    left: 10%;
-  }
-
-  input[type="text"],
-  input[type="password"],
-  select {
-    width: 100%;
-    margin-right: 0;
-  }
-
-  button[type="submit"] {
-    width: 100%;
-    margin-right: 0;
-  }
-}
